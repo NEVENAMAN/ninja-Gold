@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" type ="text/css" href ="{{url_for('static',filename='css/master.css')}}">
+</head>
+<body>
+
+    <div class="container">
+        <form action="/reset">
+            Your Gold : <input type="text" name="totalgold" value="{{session['totalGold']}}">
+                        <input type="submit" name="reset" value="reset">
+        </form>
+        <div class="forms">
+            <form action="/procces_money" method="post">
+                <h1>Farm</h1>
+                <h3>(earns 10-20 golds)</h3>
+                <input type="hidden" name="which_form" value="farm">
+                <input type="submit" name="submit" value="Find Gold!">
+            </form>
+            <form action="/procces_money" method="post">
+                <h1>Cave</h1>
+                <h3>(earns 5-10 golds)</h3>
+                <input type="hidden" name="which_form" value="cave">
+                <input type="submit" name="submit" value="Find Gold!">
+            </form>
+            <form action="/procces_money" method="post">
+                <h1>House</h1>
+                <h3>(earns 2-5 golds)</h3>
+                <input type="hidden" name="which_form" value="house">
+                <input type="submit" name="submit" value="Find Gold!">
+            </form>
+            <form action="/procces_money" method="post">
+                <h1>Casino</h1>
+                <h3>(earns/takes -0-50 golds)</h3>
+                <input type="hidden" name="which_form" value="casino">
+                <input type="submit" name="submit" value="Find Gold!">
+            </form>
+        </div>
+        <h2>Activities: </h2>
+        <div class="text">
+            <h4>{{session['activites'] |safe}}</h4>
+            <h4 id="casino">{{session['activitesCasino'] |safe}}</h4>
+        </div>
+        <!-- <textarea name="activities" rows="10" cols="100" value="{{session['activites'] | safe }}"></textarea> -->
+    </div>
+</body>
+</html>

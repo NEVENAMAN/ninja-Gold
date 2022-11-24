@@ -1,0 +1,33 @@
+.container{
+    width:1200px;
+    margin:100px auto;
+}
+.forms{
+    display:flex;
+    justify-content: space-between;
+}
+.forms form{
+    padding:50px;
+    border:2px outset black;
+    margin:50px 0px;
+    text-align: center;
+}
+.forms input[type='submit']{
+    width:90px;
+    height: 30px;
+    box-shadow: 4px 4px 4px;
+}
+.forms input[type='submit']:hover{
+    background-color: gold;
+}
+.text{
+    border: 2px outset black;
+    box-shadow: 4px 4px 4px;
+    padding: 20px;
+}
+h4{
+    color:green;
+}
+#casino{
+    color:red
+}
